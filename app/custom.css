@@ -1,0 +1,83 @@
+/* VARIABLE DEFINITIONS */
+:root {
+	--marrom: rgb(83, 43, 29);
+	--laranja: rgb(240, 141, 96);
+	--amarela: rgb(245,190, 86);
+	--azul: rgb(80, 189, 202);
+	--verde: rgb(117, 183, 71);
+
+	--marrom7: rgba(83, 43, 29, 0.7);
+	--amarelo7: rgb(245,190, 86, 0.7);
+	--laranja7: rgb(240, 141, 96, 0.7);
+
+	--azul_clara: rgb(80, 189, 202, 0.2);
+	--amarela_clara: rgb(245,190, 86, 0.2);
+		
+}
+
+
+/*.element-container, .css-1b6t8kw, .e1tzin5v3{*/
+section.main div.block-container {
+	padding-top: 20px;
+}
+
+div[data-testid=metric-container]{
+    color: blue;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+button[data-baseweb=tab] div p {
+	font-size: 1.5em;
+}
+
+/*div[data-testid=stMarkdownContainer]{*/
+.selo{
+    color: var(--marron);
+    background-color: var(--azul_clara);
+    border-radius: 7px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    height: 8em;
+    text-decoration: none;
+	background-image: url("ufca.png");
+}
+
+a, a:hover {
+    text-decoration: none;
+    background-color: var(--amarelo)
+}
+
+
+a:hover .selo {
+    text-decoration: none;
+    background-color: var(--amarela_clara);
+    margin-left: -5px;
+    margin-top: -5px;
+    border-bottom: 3px solid var(--azul_clara);
+    border-right: 3px solid var(--azul_clara);
+}
+
+
+.label {
+    color: var(--marron);
+    background-color: var(--azul_clara);
+    border-radius: 7px;
+    border: 1px solid var(--marron);
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.label .title {
+	font-size: 0.8em;
+}
+.label .value {
+	font-size: 2em;
+	font-weight: bold;
+}
+.label .percent {
+	font-size: 1em;
+	
+}
+
