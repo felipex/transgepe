@@ -4,7 +4,7 @@ import numpy as np
 import altair as alt
 import dados
 from common import header, filtros, c_css
-
+from servidores import Servidores
 
 def funcs_por_sexo(data):
 	chart = alt.Chart().mark_bar().encode(
@@ -104,6 +104,8 @@ def atualiza_dashboard(servidores):
 		#chart2 = geral_por_sexo(filtrados2)
 		#st.altair_chart(chart2, use_container_width=True, theme="streamlit")
 		geral_por_sexo2(filtrados2)
+		
+	st.dataframe(servidores_filtrados)
 
 
 def labels(servidores):
@@ -123,7 +125,8 @@ def main():
 
 	### Pega todos os servidores	st.write(servidores)    
 	header()
-	servidores = dados.servidores("./dw/UFCA202212.csv")
+	#servidores = dados.servidores("./dw/UFCA202212.csv")
+	servidores = Servidores().todos()
 	filtros(servidores)
 	
 	#labels(servidores)

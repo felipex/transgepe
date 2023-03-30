@@ -72,7 +72,7 @@ def jornada_de_trabalho(data):
 def escolaridade(data):
 	chart = alt.Chart().mark_bar().encode(
 		alt.X('count():Q', title="Quantidade"),
-		alt.Y('ESCOLARIDADE:O', title=""),
+		alt.Y('ESCOLARIDADE_:O', title=""),
 		#color=alt.Color('ESCOLARIDADE:N', legend=None)
 	).properties(
 		title = "Escolaridade"
