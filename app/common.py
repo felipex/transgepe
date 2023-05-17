@@ -1,10 +1,18 @@
 import streamlit as st
 import os
 import servidores
+import requests
 
 def muda_base():
 	#servidores.Servidores().carrega()
 	print(st.session_state["base"])
+
+def get_bases():
+	remote_files = "http://vps36332.publiccloud.com.br/static/files.json" 
+
+	req = requests.get(remote_files)
+	return req.json()
+
 
 def header():
 	col1, col2 = st.columns([1,2])
@@ -12,26 +20,15 @@ def header():
 		st.image("./ufca.png", width=200)
 	with col2:
 		st.markdown("## Força de Trabalho")
-#		st.markdown("**Base Dezembro/2022** - *Fonte: DW-Siape*")
-		
-		files = os.listdir("dw")
-		bases = []
-		meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
-		for f in files:
-			filename = f.split(".")[0]
-			parts = filename.split("_")
-			if len(parts) == 3:
-				bases.append(meses[int(parts[2])-1] + "/" +parts[1])
-		default = st.session_state["base"] if "base" in st.session_state.keys() else None
-		if default is None:
-			default = st.session_state["base"] = "./dw/"+files[len(files)-1]
-			
-		select = st.selectbox("Base:", bases, key="base_", on_change=muda_base, index=len(bases)-1)
-		
-		st.session_state["base"] = "./dw/"+files[bases.index(select)]
+
+		bases = get_bases()
+	
+		keys = list(bases.keys())
+		select = st.selectbox("Base:", keys, key="base_", on_change=muda_base, index=len(keys)-1)
+
+		st.session_state["base"] = bases[select]
 		servidores.Servidores().carrega(st.session_state["base"])
 		
-		st.write(st.session_state["base"])
 		
 
 
