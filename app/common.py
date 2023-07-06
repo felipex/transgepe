@@ -43,8 +43,12 @@ def filtros(servidores):
 				("Todos", "TAES", "Docente"),
 				#on_change=onchange_carreira,
 				key="carreira")
+				
+			nome = st.text_input("Nome", value="", autocomplete=None, key="nome")
+			
 		with col2:		
 			st.multiselect("Situação", servidores["SITUAÇÃO VÍNCULO"].unique().tolist(), key="situacao", default=["ATIVO PERMANENTE"])
+			cargo = st.text_input("Cargo", value="", autocomplete=None, key="cargo")
 
 
 
