@@ -2,16 +2,21 @@ import streamlit as st
 import os
 import servidores
 import requests
+import json
 
 def muda_base():
 	#servidores.Servidores().carrega()
 	print(st.session_state["base"])
 
-def get_bases():
+def get_bases_():
 	remote_files = "http://vps36332.publiccloud.com.br/static/files.json" 
 
 	req = requests.get(remote_files)
 	return req.json()
+
+def get_bases():
+    f = open("dw/files.json")
+    return json.load(f)
 
 
 def header():
