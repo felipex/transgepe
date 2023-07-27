@@ -8,11 +8,19 @@ def muda_base():
 	#servidores.Servidores().carrega()
 	print(st.session_state["base"])
 
+<<<<<<< HEAD
 def get_bases_():
 	remote_files = "http://vps36332.publiccloud.com.br/static/files.json" 
 
 	req = requests.get(remote_files)
 	return req.json()
+=======
+def get_bases():
+    remote_files = "dw/files.json" 
+    with open(remote_files, "r") as f:
+        j = json.load(f)
+        return j
+>>>>>>> 7f29623de20c06677d7772b60f8d533326f9b7a9
 
 def get_bases():
     f = open("dw/files.json")
@@ -47,8 +55,12 @@ def filtros(servidores):
 				("Todos", "TAES", "Docente"),
 				#on_change=onchange_carreira,
 				key="carreira")
+				
+			nome = st.text_input("Nome", value="", autocomplete=None, key="nome")
+			
 		with col2:		
 			st.multiselect("Situação", servidores["SITUAÇÃO VÍNCULO"].unique().tolist(), key="situacao", default=["ATIVO PERMANENTE"])
+			cargo = st.text_input("Cargo", value="", autocomplete=None, key="cargo")
 
 
 

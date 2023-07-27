@@ -87,7 +87,7 @@ def escolaridade(data):
 def lotacoes(data):
 	chart = alt.Chart().mark_bar().encode(
 		alt.X('count():Q', title="Quantidade"),
-		alt.Y('GRUPO UORG:O', title=""),
+		alt.Y('NOME UORG:O', title=""),
 		#color=alt.Color('ESCOLARIDADE:N', legend=None)
 	).properties(
 		title = "Lotações"

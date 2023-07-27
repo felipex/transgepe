@@ -34,7 +34,7 @@ with col2:
 
 with col1:
 	with st.container() as container:
-		selo("QRSA", "Quadro de Referência de Servidores Ativos. Aumentando só pra testar", "QRSA")
+		selo("QRSTA", "Quadro de Referência de Servidores Ativos. Aumentando só pra testar", "QRSTA")
 
 
 with col2:

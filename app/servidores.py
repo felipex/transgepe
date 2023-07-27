@@ -1,9 +1,9 @@
 import pandas as pd
-import settings
+from settings import escolaridade
 
 
 def get_escolaridade(x):
-	return settings.Escolaridade.get(x['ESCOLARIDADE'].strip(), x['ESCOLARIDADE'].strip()) 
+	return escolaridade.Escolaridade.get(x['ESCOLARIDADE'].strip(), x['ESCOLARIDADE'].strip()) 
   
 
 class Servidores:
@@ -36,6 +36,7 @@ class Servidores:
 		
 	
 	def efetivos(self, data=None):
+		print(self._data)
 		if data is None: data = self._data			
 		return data[data["SITUAÇÃO VÍNCULO"].isin(["ATIVO PERMANENTE", "EXCEDENTE A LOTACAO", "ATIVO EM OUTRO ORGAO", "CEDIDO/REQUISITADO"])]
 

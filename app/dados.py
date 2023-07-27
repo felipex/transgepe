@@ -28,3 +28,9 @@ def docentes_com_funcao(servidores):
 def servidores_por_situacao(servidores, situacoes):
 	return servidores[servidores["SITUAÇÃO VÍNCULO"].isin(situacoes)]
 	
+def servidores_por_nome(servidores, nome):
+	return servidores[servidores["NOME SERVIDOR"].str.contains(nome, case=False)]
+
+def servidores_por_cargo(servidores, cargo):
+	return servidores[servidores["CARGO"].str.contains(cargo, case=False)]
+
