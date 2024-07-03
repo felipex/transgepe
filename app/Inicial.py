@@ -2,8 +2,9 @@ import streamlit as st
 from common import header, c_css
 import os
 import re
+import sys
 
-os.chdir('app')
+sys.path.add("./app/")
 c_css()
 
 
