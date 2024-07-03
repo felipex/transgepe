@@ -65,7 +65,7 @@ def filtros(servidores):
 
 
 def c_css():	
-	with open("app/custom.css") as f:
+	with open("custom.css") as f:
 		st.write(f"""<style>{f.read()}</style>""", unsafe_allow_html=True)
 		#element-container css-1b6t8kw e1tzin5v3
 
