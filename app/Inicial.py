@@ -3,6 +3,7 @@ from common import header, c_css
 import os
 import re
 
+os.chdir('app')
 c_css()
 
 
