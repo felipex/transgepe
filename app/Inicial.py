@@ -4,7 +4,7 @@ import os
 import re
 import sys
 
-sys.path.join("./app/")
+os.path.join("/mount/src/transgepe/app/")
 c_css()
 
 
