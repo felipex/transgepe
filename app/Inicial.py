@@ -4,7 +4,7 @@ import os
 import re
 import sys
 
-sys.path.add("./app/")
+sys.path.join("./app/")
 c_css()
 
 
